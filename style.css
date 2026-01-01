@@ -1,0 +1,118 @@
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f2f2f2;
+  transition: 0.3s;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #0f9d58, #ffffff, #d32f2f);
+  filter: blur(40px);
+  z-index: -1;
+}
+
+.header {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.logo {
+  width: 120px;
+  border-radius: 50%;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.card {
+  max-width: 360px;
+  margin: 30px auto;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.glass {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.welcome {
+  background: black;
+  color: white;
+  padding: 10px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+.game {
+  opacity: 0.8;
+}
+
+.ip-box {
+  display: flex;
+  justify-content: space-between;
+  background: rgba(255,255,255,0.7);
+  padding: 10px;
+  border-radius: 12px;
+  margin: 15px 0;
+}
+
+.ip-box button {
+  border: none;
+  background: none;
+  font-size: 18px;
+}
+
+.btn {
+  display: block;
+  margin: 10px 0;
+  padding: 14px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.join {
+  background: linear-gradient(90deg, green, red);
+}
+
+.telegram {
+  background: #0088cc;
+}
+
+.views {
+  margin-top: 10px;
+}
+
+.mode {
+  margin-top: 15px;
+  border: none;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+.dark {
+  background: #111;
+  color: white;
+}
+
+.dark .glass {
+  background: rgba(0,0,0,0.6);
+}
