@@ -60,6 +60,14 @@ h1 {
     font-size: 15px;
 }
 
+.visits {
+    margin-top: 10px;
+    background: #eaeaea;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
 button {
     width: 100%;
     padding: 12px;
@@ -110,6 +118,10 @@ button {
 
     <button class="copy" onclick="copyIP()">📋 کپی IP سرور</button>
 
+    <div class="visits">
+        👥 تعداد بازدید سایت: <b id="visit-count">در حال بارگذاری...</b>
+    </div>
+
     <button class="join" onclick="join()">🎮 Join SA-MP</button>
 </div>
 
@@ -122,6 +134,16 @@ function copyIP() {
 function join() {
     window.location.href = "samp://5.57.35.73:7777";
 }
+
+// Visitor Counter (Global)
+fetch('https://api.countapi.xyz/hit/noobsag35-ai.github.io/visits')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('visit-count').innerText = data.value;
+  })
+  .catch(() => {
+    document.getElementById('visit-count').innerText = 'خطا';
+  });
 </script>
 
 </body>
