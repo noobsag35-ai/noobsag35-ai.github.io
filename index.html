@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>IRAN GAME ROLE PLAY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --bg-card: #ffffff;
+            --text-main: #000;
+            --text-sub: #444;
+            --bg-body: repeating-linear-gradient(
+                to bottom,
+                #239f40 0px,
+                #239f40 80px,
+                #ffffff 80px,
+                #ffffff 160px,
+                #da0000 160px,
+                #da0000 240px
+            );
+        }
+
+        body.dark {
+            --bg-card: #121212;
+            --text-main: #ffffff;
+            --text-sub: #bbbbbb;
+            --bg-body: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+        }
+
+        body {
+            margin: 0;
+            font-family: Tahoma, sans-serif;
+            background: var(--bg-body);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding-top: 70px;
+            transition: background 0.4s;
+        }
+
+        .card {
+            background: var(--bg-card);
+            width: 90%;
+            max-width: 400px;
+            border-radius: 16px;
+            padding: 22px;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            position: relative;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        /* Toggle button */
+        .mode-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        /* LOGO */
+        .logo {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            margin: -70px auto 12px auto;
+            position: relative;
+            background: #111;
+            padding: 4px;
+            animation: floatLogo 5s ease-in-out infinite,
+                       fadeIn 1.2s ease-out;
+        }
+
+        .logo::before {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #00c853, #ffffff, #d50000);
+            filter: blur(8px);
+            opacity: 0.9;
+            z-index: -1;
+            animation: glowPulse 3.5s ease-in-out infinite;
+        }
+
+        body.dark .logo::before {
+            background: linear-gradient(135deg, #00e676, #333, #ff1744);
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #eee;
+        }
+
+        h1 {
+            margin: 10px 0 0 0;
+            font-size: 21px;
+            color: var(--text-main);
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        .join-btn {
+            margin-top: 18px;
+            background: linear-gradient(135deg, #00c853, #009624);
+            color: white;
+            border: none;
+            padding: 13px 28px;
+            border-radius: 12px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.35s;
+            box-shadow: 0 8px 18px rgba(0, 200, 83, 0.4);
+        }
+
+        .join-btn:hover {
+            transform: translateY(-2px) scale(1.04);
+        }
+
+        .links {
+            margin-top: 18px;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        @keyframes glowPulse {
+            0% { opacity: 0.6; }
+            50% { opacity: 1; }
+            100% { opacity: 0.6; }
+        }
+
+        @keyframes floatLogo {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+            100% { transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+
+    <button class="mode-toggle" onclick="toggleMode()">🌙</button>
+
+    <div class="logo">
+        <img src="logo.png" alt="IRG Logo">
+    </div>
+
+    <h1>IRAN GAME ROLE PLAY</h1>
+
+    <p>
+        خوش آمدید به سرور رسمی<br>
+        <b>IRAN GAME ROLE PLAY</b>
+    </p>
+
+    <p>🎮 GTA san rp</p>
+
+    <button class="join-btn" onclick="joinServer()">Join SA-MP</button>
+
+    <div class="links">
+        📌 قوانین | تلگرام | دانلود
+    </div>
+</div>
+
+<script>
+    function joinServer() {
+        window.location.href = "samp://5.57.35.73:7777";
+    }
+
+    function toggleMode() {
+        document.body.classList.toggle("dark");
+        const btn = document.querySelector(".mode-toggle");
+        btn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+    }
+</script>
+
+</body>
+  </html>
