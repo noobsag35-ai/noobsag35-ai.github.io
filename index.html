@@ -1,144 +1,40 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IRAN GAME ROLE PLAY</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: sans-serif;
-    background: linear-gradient(180deg, #008000, #ffffff, #ff0000);
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.card {
-    background: rgba(255,255,255,0.95);
-    width: 90%;
-    max-width: 420px;
-    border-radius: 20px;
-    padding: 25px;
-    text-align: center;
-    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
-    animation: fadeIn 1.2s ease;
-}
-
-.logo {
-    width: 120px;
-    margin-bottom: 15px;
-    animation: float 3s ease-in-out infinite;
-}
-
-h1 {
-    margin: 10px 0;
-    font-size: 22px;
-}
-
-.welcome {
-    background: #000;
-    color: #fff;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-    font-size: 14px;
-}
-
-.server {
-    font-weight: bold;
-    margin: 15px 0 5px;
-}
-
-.ip-box {
-    background: #f2f2f2;
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 10px;
-    font-size: 15px;
-}
-
-.visits {
-    margin-top: 15px;
-    background: #eaeaea;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 14px;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 12px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-top: 10px;
-}
-
-.copy {
-    background: #222;
-    color: #fff;
-}
-
-.join {
-    background: linear-gradient(90deg, #008000, #ff0000);
-    color: #fff;
-}
-
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-    100% { transform: translateY(0); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="card">
-    <img src="logo.png" class="logo" alt="Logo">
+<div class="bg"></div>
 
-    <div class="welcome">
-        👋 خوش آمدید به سرور IRAN GAME ROLE PLAY
-    </div>
+<header class="header">
+  <img src="logo.png" class="logo">
+</header>
 
-    <h1>IRAN GAME ROLE PLAY</h1>
+<section class="card glass">
+  <div class="welcome">👋 خوش آمدید به سرور</div>
 
-    <div class="server">GTA San RP – RP Server</div>
+  <h1>IRAN GAME ROLE PLAY</h1>
+  <p class="game">🎮 GTA San RP – RP Server</p>
 
-    <div class="ip-box">5.57.35.73:7777</div>
+  <div class="ip-box">
+    <span id="ip">5.57.35.73:7777</span>
+    <button onclick="copyIP()">📋</button>
+  </div>
 
-    <button class="copy" onclick="copyIP()">📋 کپی IP سرور</button>
+  <a href="samp://5.57.35.73:7777" class="btn join">🎮 Join SA-MP</a>
+  <a href="https://t.me/YOUR_TELEGRAM" class="btn telegram">📨 تلگرام</a>
 
-    <!-- Visitor Counter (NO ERROR) -->
-    <div class="visits">
-        👥 تعداد بازدید سایت<br>
-        <img 
-          src="https://visitor-badge.laobi.icu/badge?page_id=noobsag35-ai.github.io"
-          alt="visitors">
-    </div>
+  <div class="views">
+    👁️ بازدید: <span id="views">0</span>
+  </div>
 
-    <button class="join" onclick="join()">🎮 Join SA-MP</button>
-</div>
+  <button class="mode" onclick="toggleMode()">🌙 / ☀️</button>
+</section>
 
-<script>
-function copyIP() {
-    navigator.clipboard.writeText("5.57.35.73:7777");
-    alert("✅ IP سرور کپی شد");
-}
-
-function join() {
-    window.location.href = "samp://5.57.35.73:7777";
-}
-</script>
-
+<script src="script.js"></script>
 </body>
 </html>
