@@ -100,9 +100,19 @@ h1{margin:8px 0;font-size:20px}
   border-radius:16px;
   text-decoration:none;
   font-weight:bold;
+  transition:.3s;
 }
+.btn:hover{transform:scale(1.05)}
+
 .join{color:#fff;background:linear-gradient(90deg,green,red)}
 .telegram{color:#fff;background:#0088cc}
+
+/* دکمه شاپ */
+.shop-btn{
+  color:#000;
+  background:linear-gradient(135deg,#f59e0b,#fde047);
+  box-shadow:0 0 20px rgba(245,158,11,.6);
+}
 
 /* بازدید */
 .views{
@@ -193,6 +203,13 @@ h1{margin:8px 0;font-size:20px}
 
   <a class="btn join" href="samp://5.57.35.73:7777">🎮 Join SA-MP</a>
 
+  <!-- ✅ دکمه شاپ -->
+  <a class="btn shop-btn"
+     href="https://noobsag35-ai.github.io/noobsag35-ai.shop.github.io/#"
+     target="_blank">
+     🛒 ورود به شاپ سرور
+  </a>
+
   <div class="gallery glass">
     <div class="gallery-row">
       <img src="gallery1.jpg">
@@ -201,9 +218,10 @@ h1{margin:8px 0;font-size:20px}
     </div>
   </div>
 
-  <a class="btn telegram" href="https://t.me/iR_GameRP" target="_blank">📨 تلگرام</a>
+  <a class="btn telegram" href="https://t.me/iR_GameRP" target="_blank">
+    📨 تلگرام
+  </a>
 
-  <!-- دانلود SA-MP -->
   <div class="download-box glass">
     <div class="download-text">⬇️ دانلود SA-MP ⬇️</div>
     <div class="download-buttons">
@@ -225,9 +243,10 @@ function toggleMode(){
   document.documentElement.classList.toggle("dark");
 }
 let v=localStorage.getItem("views")||0;
-v++;localStorage.setItem("views",v);
+v++;
+localStorage.setItem("views",v);
 views.innerText=v;
 </script>
 
 </body>
-        </html>
+</html>
