@@ -37,9 +37,39 @@ body{
   box-shadow:0 8px 32px rgba(0,0,0,.35);
 }
 
+/* خوش‌آمدید گرادینتی */
+.glass-gradient{
+  background:linear-gradient(
+    135deg,
+    rgba(0,255,150,.55),
+    rgba(255,255,255,.35),
+    rgba(255,0,0,.55)
+  );
+  backdrop-filter:blur(16px);
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.45);
+  box-shadow:0 0 20px rgba(255,255,255,.6);
+  animation:welcomeGlow 4s ease-in-out infinite;
+}
+
+/* انیمیشن خوش‌آمد */
+@keyframes welcomeGlow{
+  0%{box-shadow:0 0 12px rgba(0,255,150,.6)}
+  50%{box-shadow:0 0 22px rgba(255,255,255,.9)}
+  100%{box-shadow:0 0 12px rgba(255,0,0,.6)}
+}
+
 /* دارک */
 .dark .glass{
   background:rgba(0,0,0,.35);
+}
+.dark .glass-gradient{
+  background:linear-gradient(
+    135deg,
+    rgba(0,150,100,.45),
+    rgba(0,0,0,.45),
+    rgba(150,0,0,.45)
+  );
 }
 
 .card{
@@ -60,7 +90,12 @@ body{
   50%{transform:translateY(-8px)}
 }
 
-.welcome{font-size:14px}
+.welcome{
+  font-size:14px;
+  margin:10px 0 14px;
+  padding:12px 16px;
+}
+
 h1{margin:8px 0;font-size:20px}
 .game{font-size:14px;opacity:.85}
 
@@ -134,25 +169,25 @@ h1{margin:8px 0;font-size:20px}
 <section class="card glass">
   <img src="logo.png" class="logo">
 
-  <div class="welcome">👋 خوش آمدید به سرور</div>
+  <!-- خوش آمدید جدید -->
+  <div class="welcome glass-gradient">
+    👋 خوش آمدید به سرور
+  </div>
+
   <h1>IRAN GAME ROLE PLAY</h1>
   <p class="game">🎮 GTA San RP – RP Server</p>
 
-  <!-- IP -->
   <div class="ip-box glass">
     <span>5.57.35.73:7777</span>
     <button onclick="copyIP()">📋</button>
   </div>
 
-  <!-- بازدید -->
   <div class="views glass">
     👁️ بازدید: <span id="views">0</span>
   </div>
 
-  <!-- Join -->
   <a class="btn glass" href="samp://5.57.35.73:7777">🎮 Join SA-MP</a>
 
-  <!-- گالری -->
   <div class="gallery glass">
     <h3>📸 تصاویر سرور</h3>
     <div class="gallery-row">
@@ -162,7 +197,6 @@ h1{margin:8px 0;font-size:20px}
     </div>
   </div>
 
-  <!-- تلگرام -->
   <a class="btn glass" href="https://t.me/YOUR_TELEGRAM">📨 تلگرام</a>
 
   <button class="mode glass" onclick="toggleMode()">🌙 / ☀️</button>
@@ -177,7 +211,8 @@ function toggleMode(){
   document.documentElement.classList.toggle("dark");
 }
 let v=localStorage.getItem("views")||0;
-v++;localStorage.setItem("views",v);
+v++;
+localStorage.setItem("views",v);
 views.innerText=v;
 </script>
 
