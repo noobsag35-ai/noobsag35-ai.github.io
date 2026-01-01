@@ -1,142 +1,55 @@
-* {
-  box-sizing: border-box;
-  font-family: sans-serif;
-}
+/* 🔥 خوش‌آمدید شیشه‌ای گرادینتی */
+.glass-gradient{
+  margin:10px auto 14px;
+  padding:12px 18px;
+  border-radius:18px;
+  font-size:14px;
+  font-weight:500;
+  text-align:center;
 
-body {
-  margin: 0;
-  min-height: 100vh;
-  color: #000;
-  transition: 0.4s;
-}
+  background:linear-gradient(
+    135deg,
+    rgba(0,255,150,0.55),
+    rgba(255,255,255,0.35),
+    rgba(255,0,0,0.55)
+  );
 
-/* بک‌گراند سینمایی */
-.bg {
-  position: fixed;
-  inset: 0;
-  background:
-    radial-gradient(circle at top, rgba(0,255,150,0.35), transparent 40%),
-    radial-gradient(circle at bottom, rgba(255,0,0,0.35), transparent 40%),
-    linear-gradient(135deg, #0f9d58, #ffffff, #d32f2f);
-  filter: blur(70px);
-  z-index: -1;
-}
+  backdrop-filter:blur(16px) saturate(160%);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);
 
-/* هدر */
-.header {
-  text-align: center;
-  margin-top: 40px;
-}
-
-.logo {
-  width: 120px;
-  border-radius: 50%;
-  animation: float 3s ease-in-out infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
-  100% { transform: translateY(0); }
-}
-
-/* کارت شیشه‌ای */
-.card {
-  max-width: 360px;
-  margin: 30px auto;
-  padding: 25px;
-  border-radius: 24px;
-  text-align: center;
-}
-
-/* Glass Effect واقعی */
-.glass {
-  background: rgba(255,255,255,0.25);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-  border: 1px solid rgba(255,255,255,0.35);
+  border:1px solid rgba(255,255,255,0.45);
   box-shadow:
-    0 10px 40px rgba(0,0,0,0.3),
-    inset 0 0 25px rgba(255,255,255,0.25);
+    0 8px 25px rgba(0,0,0,0.35),
+    inset 0 0 20px rgba(255,255,255,0.25);
+
+  animation:welcomeGlow 4s ease-in-out infinite;
 }
 
-/* متن‌ها */
-.welcome {
-  padding: 10px;
-  border-radius: 12px;
-  margin-bottom: 15px;
-  font-size: 14px;
+@keyframes welcomeGlow{
+  0%{
+    box-shadow:
+      0 0 14px rgba(0,255,150,.6),
+      inset 0 0 18px rgba(255,255,255,.25);
+  }
+  50%{
+    box-shadow:
+      0 0 26px rgba(255,255,255,.75),
+      inset 0 0 22px rgba(255,255,255,.35);
+  }
+  100%{
+    box-shadow:
+      0 0 14px rgba(255,0,0,.6),
+      inset 0 0 18px rgba(255,255,255,.25);
+  }
 }
 
-.game {
-  opacity: 0.8;
-}
-
-/* IP */
-.ip-box {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  border-radius: 14px;
-  margin: 15px 0;
-}
-
-.ip-box button {
-  border: none;
-  background: none;
-  font-size: 18px;
-  cursor: pointer;
-}
-
-/* دکمه‌ها */
-.btn {
-  display: block;
-  margin: 10px 0;
-  padding: 14px;
-  border-radius: 16px;
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {
-  transform: scale(1.04);
-}
-
-.join {
-  color: #fff;
-  background: linear-gradient(90deg, green, red);
-}
-
-.telegram {
-  color: #fff;
-  background: #0088cc;
-}
-
-.views {
-  margin-top: 10px;
-  padding: 10px;
-  border-radius: 14px;
-}
-
-.mode {
-  margin-top: 15px;
-  padding: 10px;
-  border-radius: 14px;
-  border: none;
-  cursor: pointer;
-}
-
-/* 🌙 دارک مود */
-.dark {
-  color: #fff;
-}
-
-.dark .glass {
-  background: rgba(0,0,0,0.35);
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow:
-    0 10px 40px rgba(0,0,0,0.7),
-    inset 0 0 20px rgba(255,255,255,0.05);
+/* 🌙 دارک مود مخصوص خوش‌آمدید */
+.dark .glass-gradient{
+  background:linear-gradient(
+    135deg,
+    rgba(0,150,100,0.45),
+    rgba(0,0,0,0.45),
+    rgba(150,0,0,0.45)
+  );
+  border:1px solid rgba(255,255,255,0.2);
 }
