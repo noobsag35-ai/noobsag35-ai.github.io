@@ -1,4 +1,4 @@
-// شمارش بازدید (بدون خطا در GitHub Pages)
+// شمارش بازدید (بدون خطا)
 let views = localStorage.getItem("views");
 views = views ? Number(views) + 1 : 1;
 localStorage.setItem("views", views);
