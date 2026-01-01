@@ -4,37 +4,182 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IRAN GAME ROLE PLAY</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
 
+<style>
+*{box-sizing:border-box;font-family:Tahoma}
+body{
+  margin:0;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  color:#fff;
+}
+
+/* بک‌گراند */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at top, rgba(0,255,150,.35), transparent 40%),
+    radial-gradient(circle at bottom, rgba(255,0,0,.35), transparent 40%),
+    linear-gradient(135deg,#0f9d58,#fff,#d32f2f);
+  filter:blur(70px);
+  z-index:-1;
+}
+
+/* شیشه‌ای */
+.glass{
+  background:rgba(255,255,255,.25);
+  backdrop-filter:blur(18px);
+  border-radius:22px;
+  border:1px solid rgba(255,255,255,.3);
+  box-shadow:0 8px 32px rgba(0,0,0,.35);
+}
+
+/* دارک */
+.dark .glass{
+  background:rgba(0,0,0,.35);
+}
+
+.card{
+  width:92%;
+  max-width:380px;
+  padding:20px;
+  text-align:center;
+}
+
+/* لوگو */
+.logo{
+  width:110px;
+  margin:-70px auto 10px;
+  display:block;
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{
+  50%{transform:translateY(-8px)}
+}
+
+.welcome{font-size:14px}
+h1{margin:8px 0;font-size:20px}
+.game{font-size:14px;opacity:.85}
+
+/* IP */
+.ip-box{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px;
+  margin:15px 0 10px;
+}
+.ip-box button{
+  background:none;
+  border:none;
+  font-size:18px;
+  cursor:pointer;
+}
+
+/* بازدید */
+.views{
+  margin-bottom:14px;
+  padding:10px;
+  font-size:14px;
+}
+
+/* دکمه‌ها */
+.btn{
+  display:block;
+  padding:13px;
+  margin:10px 0;
+  text-decoration:none;
+  color:#fff;
+  font-size:15px;
+}
+
+/* گالری */
+.gallery{
+  margin:18px 0;
+  padding:14px;
+}
+.gallery h3{
+  font-size:14px;
+  margin-bottom:10px;
+}
+.gallery-row{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+}
+.gallery-row img{
+  width:140px;
+  height:90px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+/* مود */
+.mode{
+  margin-top:12px;
+  padding:8px 16px;
+  font-size:18px;
+  background:none;
+  border:none;
+}
+</style>
+</head>
+
+<body>
 <div class="bg"></div>
 
-<header class="header">
-  <img src="logo.png" class="logo">
-</header>
-
 <section class="card glass">
-  <div class="welcome">👋 خوش آمدید به سرور</div>
+  <img src="logo.png" class="logo">
 
+  <div class="welcome">👋 خوش آمدید به سرور</div>
   <h1>IRAN GAME ROLE PLAY</h1>
   <p class="game">🎮 GTA San RP – RP Server</p>
 
+  <!-- IP -->
   <div class="ip-box glass">
     <span>5.57.35.73:7777</span>
     <button onclick="copyIP()">📋</button>
   </div>
 
-  <a class="btn join glass" href="samp://5.57.35.73:7777">🎮 Join SA-MP</a>
-  <a class="btn telegram glass" href="https://t.me/YOUR_TELEGRAM">📨 تلگرام</a>
-
+  <!-- بازدید -->
   <div class="views glass">
     👁️ بازدید: <span id="views">0</span>
   </div>
 
+  <!-- Join -->
+  <a class="btn glass" href="samp://5.57.35.73:7777">🎮 Join SA-MP</a>
+
+  <!-- گالری -->
+  <div class="gallery glass">
+    <h3>📸 تصاویر سرور</h3>
+    <div class="gallery-row">
+      <img src="gallery1.jpg">
+      <img src="gallery2.jpg">
+      <img src="gallery3.jpg">
+    </div>
+  </div>
+
+  <!-- تلگرام -->
+  <a class="btn glass" href="https://t.me/YOUR_TELEGRAM">📨 تلگرام</a>
+
   <button class="mode glass" onclick="toggleMode()">🌙 / ☀️</button>
 </section>
 
-<script src="script.js"></script>
+<script>
+function copyIP(){
+  navigator.clipboard.writeText("5.57.35.73:7777");
+  alert("IP کپی شد");
+}
+function toggleMode(){
+  document.documentElement.classList.toggle("dark");
+}
+let v=localStorage.getItem("views")||0;
+v++;localStorage.setItem("views",v);
+views.innerText=v;
+</script>
+
 </body>
 </html>
