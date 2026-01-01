@@ -61,7 +61,7 @@ h1 {
 }
 
 .visits {
-    margin-top: 10px;
+    margin-top: 15px;
     background: #eaeaea;
     padding: 10px;
     border-radius: 10px;
@@ -114,12 +114,16 @@ button {
 
     <div class="server">GTA San RP – RP Server</div>
 
-    <div class="ip-box" id="ip">5.57.35.73:7777</div>
+    <div class="ip-box">5.57.35.73:7777</div>
 
     <button class="copy" onclick="copyIP()">📋 کپی IP سرور</button>
 
+    <!-- Visitor Counter (NO ERROR) -->
     <div class="visits">
-        👥 تعداد بازدید سایت: <b id="visit-count">در حال بارگذاری...</b>
+        👥 تعداد بازدید سایت<br>
+        <img 
+          src="https://visitor-badge.laobi.icu/badge?page_id=noobsag35-ai.github.io"
+          alt="visitors">
     </div>
 
     <button class="join" onclick="join()">🎮 Join SA-MP</button>
@@ -134,16 +138,6 @@ function copyIP() {
 function join() {
     window.location.href = "samp://5.57.35.73:7777";
 }
-
-// Visitor Counter (Global)
-fetch('https://api.countapi.xyz/hit/noobsag35-ai.github.io/visits')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('visit-count').innerText = data.value;
-  })
-  .catch(() => {
-    document.getElementById('visit-count').innerText = 'خطا';
-  });
 </script>
 
 </body>
